@@ -2,6 +2,7 @@ import { IProduct } from '@/interfaces/Product'
 import { formatPrice } from '@/lib/utils'
 import { ColumnDef } from '@tanstack/react-table'
 import { Button } from '../ui/button'
+import { Link } from 'react-router-dom'
 
 export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
     {
@@ -23,7 +24,7 @@ export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
         cell: ({ row }) => {
             return (
                 <>
-                    <Button className='bg-blue-500 w-16'>Chỉnh sửa</Button>
+                      <Link to={`/products/${row?.original.id}`}> <Button className='bg-blue-500 w-16'>Chỉnh sửa</Button></Link>  
                     <Button onClick={() => removeProduct(row?.original!)} className='bg-red-600'>Xóa</Button>
                 </>
             )

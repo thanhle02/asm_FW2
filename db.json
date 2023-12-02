@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "name": "sản phẩm 1",
-      "price": 111111111,
-      "id": 7,
-      "img": "https://picsum.photos/200"
-    },
-    {
       "name": "Sản phẩm update 123131",
       "price": "200",
       "id": 8,
