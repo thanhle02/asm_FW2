@@ -25,7 +25,7 @@ const NameForm = ({ data }: NameFormProps) => {
             setProductEditStatus(false)
             toast({
                 variant: 'success',
-                title: 'Chúc mừng thanh niên!!',
+                title: 'Chúc mừng bạn',
                 description: 'Cập nhật tiêu đề thành công'
             })
         }

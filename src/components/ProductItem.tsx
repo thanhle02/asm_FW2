@@ -32,8 +32,8 @@ const ProductItem = ({ product }: ProductItemProps) => {
             setProductEditId(null)
             toast({
                 variant: 'destructive',
-                title: 'Chúc mừng thanh niên!!',
-                description: 'Em đã cập nhật sản phẩm thành công'
+                title: 'Chúc mừng ban',
+                description: 'cập nhật sản phẩm thành công'
             })
         }
     })

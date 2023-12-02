@@ -1,5 +1,3 @@
-
-
 import { IProduct } from '@/interfaces/Product'
 import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button'
@@ -30,8 +28,8 @@ const ImgForm = ({ data }: ImgFormProps) => {
             setProductEditStatus(false)
             toast({
                 variant: 'success',
-                title: 'Chúc mừng bạn ',
-                description: 'Cập nhật ảnh thành công'
+                title: 'Chúc mừng bạn',
+                description: 'Cập nhật ảnh thành công'
             })
         }
     })
@@ -53,7 +51,7 @@ const ImgForm = ({ data }: ImgFormProps) => {
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-               ảnh
+                Ảnh
                 <Button variant='ghost' onClick={() => setProductEditStatus(!productEditStatus)}>
                     {productEditStatus ? (
                         <>Hủy</>
@@ -68,19 +66,19 @@ const ImgForm = ({ data }: ImgFormProps) => {
             {!productEditStatus && (
                 <React.Fragment>
                     <p className='text-sm mt-2'>{data?.name}</p>
-                    <img src={data?.img} alt="Product img" className="w-32 h-32 rounded-md object-cover mt-2" />
+                    {data?.img && <img src={data.img} alt="Product img" className="w-32 h-32 rounded-md object-cover mt-2" />}
                 </React.Fragment>
             )}
             {productEditStatus && (
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onHandleSubmit)} className='flex flex-col gap-y-8'>
-                       
                         <FormField
                             control={form.control}
                             name='img'
                             render={({ field }) => (
                                 <FormItem>
                                     <FormControl>
+                                        <img src={field.value} alt="Product img" className="w-32 h-32 rounded-md object-cover mt-2" />
                                         <Input {...field} placeholder='Nhập URL ảnh sản phẩm' />
                                     </FormControl>
                                 </FormItem>

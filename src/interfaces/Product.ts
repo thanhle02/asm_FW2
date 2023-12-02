@@ -4,3 +4,9 @@ export interface IProduct {
     price: number,
     img: string
 }
+export interface User {
+    id?: number
+    email: string
+    password: string,
+    Confirmpassword: string,
+}

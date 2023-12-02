@@ -1,14 +1,9 @@
 import { IProduct } from '@/interfaces/Product'
 import { formatPrice } from '@/lib/utils'
 import { ColumnDef } from '@tanstack/react-table'
-import { Link } from 'react-router-dom'
 import { Button } from '../ui/button'
 
 export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
-    {
-        accessorKey: 'img',
-        header: () => <span className='font-bold'>Hình ảnh </span>
-    },
     {
         accessorKey: 'name',
         header: () => <span className='font-bold'>Tên sản phẩm</span>
@@ -28,8 +23,8 @@ export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
         cell: ({ row }) => {
             return (
                 <>
-                    <Link to={`/products/${row?.original.id}`}>Chỉnh sửa</Link>
-                    <Button onClick={() => removeProduct(row?.original!)}>Xóa</Button>
+                    <Button className='bg-blue-500 w-16'>Chỉnh sửa</Button>
+                    <Button onClick={() => removeProduct(row?.original!)} className='bg-red-600'>Xóa</Button>
                 </>
             )
         }

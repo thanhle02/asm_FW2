@@ -1,7 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+ /* src/index.scss */
+/* src/styles/main.css */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Your custom styles go here */
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,7 +71,9 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+ .root{
+  max-width: 100%
+ }
 @layer base {
   * {
     @apply border-border;

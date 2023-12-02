@@ -5,22 +5,22 @@ import Products from "@/components/Products";
 
 const Homepage = () => {
     return (
-    <div>
-        <header>
-            <Header/>
-        </header>
-<main>
-<  Banner/>
-<div className="mt-2 5">
-<  Products/>
-</div>
-</main>
-      
+        <div  >
+            <header>
+                <Header />
+            </header>
+            <main>
+                <  Banner />
+                <div className="mt-5">
+                    <  Products />
+                </div>
+            </main>
 
-        <footer>
-            <Footer/>
-        </footer>
-    </div>
+
+            <footer>
+                <Footer />
+            </footer>
+        </div>
     )
 }
 

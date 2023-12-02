@@ -6,7 +6,8 @@ import Detail from './components/Edit'
 import Edit from './components/Edit'
 import Homepage from './layout/Homepage'
 // import Header from './components/header/Header'
-
+import SignupPage from './components/Signup'
+import SigninPage from './components/Signin'
 function App() {
     return (
         <div className=' max-w-4xl mx-auto'>
@@ -20,7 +21,10 @@ function App() {
                 <Route path='products' element={<List />} />
                 <Route path='products/add' element={<Add />} />
                 <Route path='products/:id' element={<Edit />} />
-                {/* <Route path='header' element={<Header />} /> */}
+                <Route path='signup' element={<SignupPage />} />
+                <Route path='signin' element={<SigninPage />} />
+
+
             </Routes>
         </div>
     )
