@@ -12,8 +12,8 @@ const List = () => {
         onSuccess: () => {
             toast({
                 variant: 'success',
-                title: 'Chúc mừng thanh niên!!',
-                description: 'Sản phẩm xóa thành công'
+                title: 'Chúc mừng bạn',
+                description: 'xóa thành công'
             })
         }
     })

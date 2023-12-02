@@ -1,10 +1,10 @@
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
-
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { IProduct } from '@/interfaces/Product'
 
 interface DataTableProps<TData, TValue> {
-    columns: ColumnDef<TData, TValue>[]
-    data: TData[]
+    columns: ColumnDef<IProduct, TValue>[]
+    data: IProduct[]
 }
 
 export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
@@ -34,13 +34,20 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
                 </TableHeader>
                 <TableBody>
                     {table.getRowModel().rows?.length ? (
+
                         table.getRowModel().rows.map((row) => (
+
                             <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
+                                <TableCell>
+                                    <img src={row.original.img} alt="Image" />
+                                </TableCell>
                                 {row.getVisibleCells().map((cell) => (
+
                                     <TableCell key={cell.id}>
                                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                     </TableCell>
                                 ))}
+
                             </TableRow>
                         ))
                     ) : (

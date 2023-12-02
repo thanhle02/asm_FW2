@@ -6,6 +6,10 @@ import { Button } from '../ui/button'
 
 export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
     {
+        accessorKey: 'img',
+        header: () => <span className='font-bold'>Hình ảnh </span>
+    },
+    {
         accessorKey: 'name',
         header: () => <span className='font-bold'>Tên sản phẩm</span>
     },

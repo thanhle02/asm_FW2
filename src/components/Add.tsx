@@ -11,8 +11,8 @@ const Add = () => {
         onSuccess: () => {
             toast({
                 variant: 'success',
-                title: 'Chúc mừng thanh niên!!',
-                description: 'Em đã thêm sản phẩm thành công'
+                title: 'Chúc mừng bạn',
+                description: 'thêm sản phẩm thành công'
             })
         }
     })

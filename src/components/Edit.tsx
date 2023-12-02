@@ -5,6 +5,7 @@ import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import NameForm from './Product/NameForm'
 import PriceForm from './Product/PriceForm'
+import ImgForm from './Product/Img';
 
 type Props = {}
 
@@ -16,6 +17,9 @@ const Edit = (props: Props) => {
             <div className='grid grid-cols-2'>
                 <div>
                     <NameForm data={data} />
+                </div>
+                <div>
+                    <ImgForm data={data} />
                 </div>
                 <div>
                     <PriceForm data={data} />
