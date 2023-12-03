@@ -1,11 +1,9 @@
-
-import { signin, signup } from '@/apis/auth'
 import { joiResolver } from '@hookform/resolvers/joi'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useMutation, useQueryClient } from 'react-query'
-import { useLocalStorage } from './useStorage';
-import { formSigninSchema, formSignupSchema } from '@/common/Schema';
-
+import { useLocalStorage } from './useStorage'
+import { signin, signup } from '@/apis/auth'
+import { formSigninSchema, formSignupSchema } from '@/common/Schema'
 
 type formControlType = {
     name?: string
@@ -48,7 +46,7 @@ export const useAuthMutation = ({
         }
     })
     const form = useForm({
-        resolver: joiResolver(action === 'SIGN_UP' ? formSigninSchema: formSignupSchema),
+     resolver: joiResolver(action === 'SIGN_UP' ? formSignupSchema : formSigninSchema),
         defaultValues
     })
     const onSubmit: SubmitHandler<any> = (values) => {

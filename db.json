@@ -1,34 +1,44 @@
 {
   "products": [
     {
-      "name": "Sản phẩm update 123131",
-      "price": "200",
-      "id": 8,
-      "img": "https://picsum.photos/200"
-    },
-    {
-      "name": "dâu",
-      "price": 123131,
+      "name": "sản phẩm 15",
+      "price": 123131445,
       "id": 12,
-      "img": "https://picsum.photos/200"
+      "img": "https://picsum.photos/200/300"
     },
     {
       "name": "Apple Watch Ultra GPS",
       "price": 200,
       "id": 14,
-      "img": "https://picsum.photos/200"
+      "img": "https://picsum.photos/200/300"
     }
   ],
-  "users": [
+  "signup": [
     {
+      "name": "lethithanh",
       "email": "admin@gmail.com",
       "password": "$2a$10$48vdQGSAOIh2txZFKeRDaOW2tVxBwSO/IaTRUk8h.y15KS8ohlUoa",
       "id": 1
     },
     {
-      "email": "member@gmail.com",
-      "password": "$2a$10$k0HwN92zhkLUrS8pZ.L0VOGC0Kz/hlmKhADRZBRJcAUo434sVvwpe",
+      "name": "sản phẩm 15",
+      "email": "hangp5253@gmail.com",
+      "password": "1234567",
+      "confirmPassword": "1234567",
       "id": 2
+    },
+    {
+      "name": "sản phẩm 15",
+      "email": "hangp5253@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 3
+    }
+  ],
+  "signin": [
+    {
+      "email": "thanh@gmail.com",
+      "password": "123456"
     }
   ]
 }

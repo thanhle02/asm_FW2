@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { useToast } from '@/components/ui/use-toast'
-import { useAuthMutation } from '@/hooks/useAuthMutation'
+ import { useAuthMutation } from '@/hooks/useAuthMutation'
 
-const SigninPage = () => {
+const SignIn = () => {
     const { toast } = useToast()
     const { form, onSubmit } = useAuthMutation({
         action: 'SIGN_IN'
@@ -46,4 +46,4 @@ const SigninPage = () => {
     )
 }
 
-export default SigninPage
+export default SignIn

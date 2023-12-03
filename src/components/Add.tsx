@@ -3,9 +3,11 @@ import { Button } from './ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel } from './ui/form'
 import { Input } from './ui/input'
 import { useToast } from './ui/use-toast'
+import { useNavigate } from 'react-router-dom'
 
 const Add = () => {
     const { toast } = useToast()
+    const navigate = useNavigate();
     const { form, onSubmit } = useProductMutation({
         action: 'ADD',
         onSuccess: () => {
@@ -14,6 +16,7 @@ const Add = () => {
                 title: 'Chúc mừng bạn',
                 description: 'thêm sản phẩm thành công'
             })
+            navigate('/products'); // Điều hướng về trang "Product"
         }
     })
     return (
@@ -45,6 +48,21 @@ const Add = () => {
                             </FormItem>
                         )}
                     ></FormField>
+
+
+                    <FormField
+                        control={form.control}
+                        name='img'
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className='font-bold'>Ảnh sản phẩm</FormLabel>
+                                <FormControl>
+                                    <Input  placeholder='Ảnh sản phẩm' {...field} />
+                                </FormControl>
+                            </FormItem>
+                        )}
+                    ></FormField>
+
                     <Button type='submit'>Thêm</Button>
                 </form>
             </Form>

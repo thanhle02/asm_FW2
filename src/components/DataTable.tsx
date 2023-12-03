@@ -1,6 +1,8 @@
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { IProduct } from '@/interfaces/Product'
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<IProduct, TValue>[]
@@ -15,7 +17,11 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
   })
 
   return (
-    <div className='rounded-md border'>
+
+    <div className='rounded-md border w-full'>
+      <div>
+        <Link to={'/products/add'}><Button className='bg-amber-600'>Thêm </Button></Link>
+      </div>
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -37,7 +43,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
                 <TableCell>
-                  {row.original.img && <img src={row.original.img} alt="Image" />}
+                  {row.original.img && <img style={{ width: '200px', height: '200px' }} src={row.original.img} alt="Image" />}
                   {row.original.img && <span>{row.original.img.split('/').pop()}</span>}
                 </TableCell>
                 {row.getVisibleCells().map((cell) => (
@@ -56,6 +62,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
           )}
         </TableBody>
       </Table>
+
     </div>
   )
 }

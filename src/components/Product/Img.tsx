@@ -1,4 +1,6 @@
-import { IProduct } from '@/interfaces/Product'
+
+
+    import { IProduct } from '@/interfaces/Product'
 import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button'
 import { Pencil } from 'lucide-react'
@@ -8,18 +10,16 @@ import { Input } from '../ui/input'
 import { useProductMutation } from '@/hooks/useProductMutation'
 import { useToast } from '../ui/use-toast'
 
-type ImgFormProps = {
+type NameFormProps = {
     data: IProduct
 }
 
 type FormControlType = {
     name: string
-    img: string,
-    price: number
-
+    image: string
 }
 
-const ImgForm = ({ data }: ImgFormProps) => {
+const NameForm = ({ data }: NameFormProps) => {
     const { toast } = useToast()
     const [productEditStatus, setProductEditStatus] = useState(false)
     const { form, onSubmit } = useProductMutation({
@@ -28,8 +28,8 @@ const ImgForm = ({ data }: ImgFormProps) => {
             setProductEditStatus(false)
             toast({
                 variant: 'success',
-                title: 'Chúc mừng bạn',
-                description: 'Cập nhật ảnh thành công'
+                title: 'Chúc mừng thanh niên!!',
+                description: 'Cập nhật tiêu đề thành công'
             })
         }
     })
@@ -38,8 +38,7 @@ const ImgForm = ({ data }: ImgFormProps) => {
         if (data && form) {
             form.reset({
                 name: data.name || '',
-                img: data.img || '',
-                price: data.price || 0,
+                img: data.img || ''
             })
         }
     }, [data, form])
@@ -51,7 +50,7 @@ const ImgForm = ({ data }: ImgFormProps) => {
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Ảnh
+                Tên sản phẩm
                 <Button variant='ghost' onClick={() => setProductEditStatus(!productEditStatus)}>
                     {productEditStatus ? (
                         <>Hủy</>
@@ -66,7 +65,7 @@ const ImgForm = ({ data }: ImgFormProps) => {
             {!productEditStatus && (
                 <React.Fragment>
                     <p className='text-sm mt-2'>{data?.name}</p>
-                    {data?.img && <img src={data.img} alt="Product img" className="w-32 h-32 rounded-md object-cover mt-2" />}
+                    <img src={data?.image} alt="Product Image" className="w-32 h-32 rounded-md object-cover mt-2" />
                 </React.Fragment>
             )}
             {productEditStatus && (
@@ -74,11 +73,21 @@ const ImgForm = ({ data }: ImgFormProps) => {
                     <form onSubmit={form.handleSubmit(onHandleSubmit)} className='flex flex-col gap-y-8'>
                         <FormField
                             control={form.control}
+                            name='name'
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <Input {...field} placeholder='Nhập tên sản phẩm' />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
                             name='img'
                             render={({ field }) => (
                                 <FormItem>
                                     <FormControl>
-                                        <img src={field.value} alt="Product img" className="w-32 h-32 rounded-md object-cover mt-2" />
                                         <Input {...field} placeholder='Nhập URL ảnh sản phẩm' />
                                     </FormControl>
                                 </FormItem>
@@ -94,4 +103,4 @@ const ImgForm = ({ data }: ImgFormProps) => {
     )
 }
 
-export default ImgForm
+export default NameForm

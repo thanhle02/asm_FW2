@@ -5,6 +5,11 @@ import { Button } from '../ui/button'
 import { Link } from 'react-router-dom'
 
 export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
+   
+   {
+ accessorKey: 'name',
+ header: () => <span className='font-bold'>Ảnh sản phẩm</span>
+   },
     {
         accessorKey: 'name',
         header: () => <span className='font-bold'>Tên sản phẩm</span>

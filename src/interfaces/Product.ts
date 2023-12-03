@@ -5,8 +5,9 @@ export interface IProduct {
     img: string
 }
 export interface User {
-    id?: number
+    id?: number,
+    name: string,
     email: string
     password: string,
-    Confirmpassword: string,
+    confirmPassword: string,
 }
