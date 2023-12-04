@@ -15,7 +15,8 @@ type formControlDataType = {
 // Định validate form sử dụng joi
 const formSchema = Joi.object({
   name: Joi.string().min(2).max(50),
-  price: Joi.number(),
+  price: Joi.number().min(2),
+  img: Joi.string(),
 });
 
 type useProductMutationProps = {

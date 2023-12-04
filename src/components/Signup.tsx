@@ -17,16 +17,17 @@ const SignupPage = () => {
         }
     })
     return (
-        <div>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)}>
-                    <FormField
+        <div className='w-1/2 ml-32 mr-44  mt-14'>
+            <h1 className='text-lg ml-32 '> Đăng Kí Tài Khoản</h1>
+            <Form {...form} >
+                <form onSubmit={form.handleSubmit(onSubmit)} >
+                    <FormField 
                         name='name'
                         control={form.control}
                         render={({ field }) => (
-                            <FormItem>
+                            <FormItem >
                                 <FormControl>
-                                    <Input type='name' {...field} placeholder='Tên của bạn' />
+                                    <Input type='name' {...field} placeholder='Tên của bạn' className='mt-9'/>
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -38,7 +39,7 @@ const SignupPage = () => {
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
-                                    <Input type='email' {...field} placeholder='Email của bạn' />
+                                    <Input type='email' {...field} placeholder='Email của bạn' className='mt-9'/>
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -50,7 +51,7 @@ const SignupPage = () => {
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
-                                    <Input type='password' {...field} placeholder='Password của bạn' />
+                                    <Input type='password' {...field} placeholder='Password của bạn' className='mt-9' />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -62,13 +63,13 @@ const SignupPage = () => {
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
-                                    <Input type='password' {...field} placeholder='Nhập lại mật khẩu của bạn' />
+                                    <Input type='password' {...field} placeholder='Nhập lại mật khẩu của bạn'  className='mt-9'/>
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     ></FormField>
-                    <Button type='submit' variant='destructive'>
+                    <Button type='submit' variant='destructive' className='bg-blue-400 mt-9 ml-36'>
                         Đăng ký
                     </Button>
                 </form>

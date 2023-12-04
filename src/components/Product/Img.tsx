@@ -16,7 +16,8 @@ type NameFormProps = {
 
 type FormControlType = {
     name: string
-    image: string
+    img: string,
+    
 }
 
 const NameForm = ({ data }: NameFormProps) => {
@@ -28,8 +29,8 @@ const NameForm = ({ data }: NameFormProps) => {
             setProductEditStatus(false)
             toast({
                 variant: 'success',
-                title: 'Chúc mừng thanh niên!!',
-                description: 'Cập nhật tiêu đề thành công'
+                title: 'Chúc mừng bạn',
+                description: 'Cập nhật ảnh  thành công'
             })
         }
     })
@@ -50,7 +51,7 @@ const NameForm = ({ data }: NameFormProps) => {
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Tên sản phẩm
+                Ảnh sản phẩm
                 <Button variant='ghost' onClick={() => setProductEditStatus(!productEditStatus)}>
                     {productEditStatus ? (
                         <>Hủy</>
@@ -64,14 +65,14 @@ const NameForm = ({ data }: NameFormProps) => {
             </div>
             {!productEditStatus && (
                 <React.Fragment>
-                    <p className='text-sm mt-2'>{data?.name}</p>
-                    <img src={data?.image} alt="Product Image" className="w-32 h-32 rounded-md object-cover mt-2" />
+                    {/* <p className='text-sm mt-2'>{data?.img}</p> */}
+                    <img src={data?.img} alt="Product Image" className="w-32 h-32 rounded-md object-cover mt-2" />
                 </React.Fragment>
             )}
             {productEditStatus && (
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onHandleSubmit)} className='flex flex-col gap-y-8'>
-                        <FormField
+                        {/* <FormField
                             control={form.control}
                             name='name'
                             render={({ field }) => (
@@ -81,7 +82,7 @@ const NameForm = ({ data }: NameFormProps) => {
                                     </FormControl>
                                 </FormItem>
                             )}
-                        />
+                        /> */}
                         <FormField
                             control={form.control}
                             name='img'

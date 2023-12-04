@@ -5,11 +5,14 @@ import { Button } from '../ui/button'
 import { Link } from 'react-router-dom'
 
 export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
-   
-   {
- accessorKey: 'name',
- header: () => <span className='font-bold'>Ảnh sản phẩm</span>
-   },
+    {
+        accessorKey: 'img',
+        header: () => <span className='font-bold'>Ảnh sản phẩm</span>,
+        cell: ({ row }) => {
+            const imageSrc = row.getValue('img') || 0;
+            // return <img src={imageSrc} alt='Ảnh sản phẩm' className='w-16 h-16' />;
+        }
+    },
     {
         accessorKey: 'name',
         header: () => <span className='font-bold'>Tên sản phẩm</span>
@@ -19,7 +22,6 @@ export const getColumns = (removeProduct: any): ColumnDef<IProduct>[] => [
         header: 'Giá',
         cell: ({ row }) => {
             const formattedPrice = formatPrice(row.getValue('price') || 0)
-
             return <div dangerouslySetInnerHTML={{ __html: formattedPrice }} />
         }
     },

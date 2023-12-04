@@ -10,7 +10,9 @@ const SignIn = () => {
         action: 'SIGN_IN'
     })
     return (
-        <div>
+        <div className='w-1/2 ml-32 mr-44  mt-14'>
+            <h1 className='text-lg ml-32 '> Đăng Nhập  Tài Khoản</h1>
+
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                     <FormField
@@ -19,7 +21,7 @@ const SignIn = () => {
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
-                                    <Input type='email' {...field} placeholder='Email của bạn' />
+                                    <Input type='email' {...field} placeholder='Email của bạn' className='mt-9' />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -31,13 +33,13 @@ const SignIn = () => {
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
-                                    <Input type='password' {...field} placeholder='Password của bạn' />
+                                    <Input type='password' {...field} placeholder='Password của bạn' className='mt-9' />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     ></FormField>
-                    <Button type='submit' variant='destructive'>
+                    <Button type='submit' variant='destructive' className='mt-12 ml-36'>
                         Đăng nhập
                     </Button>
                 </form>

@@ -36,7 +36,7 @@ function useStorage<T>(key: string, defaultValue: ValueOrFunction<T>, storageObj
           setValue(parsedValue);
         }
       } catch (error) {
-        // console.error('Error parsing stored value:', error);
+        console.error('Error parsing stored value:', error);
       }
     } else if (value !== undefined) {
       storageObject.setItem(key, JSON.stringify(value));

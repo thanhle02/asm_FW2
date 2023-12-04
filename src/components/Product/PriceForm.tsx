@@ -25,7 +25,7 @@ const PriceForm = ({ data }: PriceFormProps) => {
             setProductEditStatus(false)
             toast({
                 variant: 'success',
-                title: 'Chúc mừng thanh niên!!',
+                title: 'Chúc mừng bạn',
                 description: 'Cập nhật giá thành công'
             })
         }

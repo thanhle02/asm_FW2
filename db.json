@@ -1,8 +1,8 @@
 {
   "products": [
     {
-      "name": "sản phẩm 15",
-      "price": 123131445,
+      "name": "sản phẩm 15f",
+      "price": 2000000,
       "id": 12,
       "img": "https://picsum.photos/200/300"
     },
@@ -11,6 +11,36 @@
       "price": 200,
       "id": 14,
       "img": "https://picsum.photos/200/300"
+    },
+    {
+      "name": "khi",
+      "price": 1000,
+      "img": "https://picsum.photos/200/300",
+      "id": 17
+    },
+    {
+      "name": "khi",
+      "price": 11,
+      "img": "https://picsum.photos/200/300",
+      "id": 18
+    },
+    {
+      "name": "khi",
+      "price": 11,
+      "img": "https://picsum.photos/200/300",
+      "id": 19
+    },
+    {
+      "name": "khi",
+      "price": 11,
+      "img": "https://picsum.photos/200/300",
+      "id": 20
+    },
+    {
+      "name": "thanh lê",
+      "price": 55,
+      "img": "https://picsum.photos/200/300",
+      "id": 21
     }
   ],
   "signup": [
@@ -33,6 +63,20 @@
       "password": "123456",
       "confirmPassword": "123456",
       "id": 3
+    },
+    {
+      "name": "thanhle",
+      "email": "thanh030402@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 4
+    },
+    {
+      "name": "thanh lê",
+      "email": "lethithanh030402@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 5
     }
   ],
   "signin": [
